@@ -1,0 +1,12 @@
+spring:
+  application:
+      name: green-connect-backend-api
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      platform: sqlserver
+      mode: always
+
