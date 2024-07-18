@@ -1,0 +1,22 @@
+POST http://localhost:8080/api/user/register
+Content-Type: application/json
+
+{
+  "username": "supipi",
+  "password":"walk"
+}
+
+###
+POST http://localhost:8080/api/user/register
+Content-Type: application/json
+
+{
+  "username": "bhagya",
+  "password":"run"
+}
+
+###
+GET http://localhost:8080/api/user/hello
+
+###
+POST http://localhost:8080/api/user/register-1
