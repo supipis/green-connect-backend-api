@@ -72,8 +72,13 @@ public class ListingController {
     }
 
     @GetMapping
-    public List<Listing> getAllListings() {
-        return listingService.getAllListings();
+    public List<Listing> getAllListingsForUser() {
+        return listingService.getAllListingsForUser();
+    }
+
+    @GetMapping("/all")
+    public List<Listing> getAllListings(){
+       return listingService.getAllListings();
     }
 
     @GetMapping("/{id}")
@@ -85,22 +90,5 @@ public class ListingController {
     public void deleteListing(@PathVariable Long id) {
         listingService.deleteListing(id);
     }
-
-    /*@PutMapping("/{id}")
-    public Listing updateListing(@PathVariable Long id, @RequestBody Listing listing) {
-        return listingService.updateListing(id, listing);
-    }*/
-
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Listing> updateListing(@PathVariable Long id, @RequestBody Listing updatedListing) {
-//        try {
-//            Listing updated = listingService.updateListing(id, updatedListing);
-//            return ResponseEntity.ok(updated);
-//        } catch (ResourceNotFoundException e) {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
-
-
 }
 

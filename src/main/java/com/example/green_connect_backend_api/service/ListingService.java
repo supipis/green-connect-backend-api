@@ -25,6 +25,10 @@ public class ListingService {
 
     private static final String UPLOAD_DIR = "uploads/";
 
+    public List<Listing> getListingsByUserId(Long userId) {
+        return listingRepository.findByUserId(userId);
+    }
+
     public Listing saveListing(MultipartFile image, String name, String category, String location, int quantity) {
         System.out.println("in the service");
         String fileId = saveImageFile(image);
@@ -70,6 +74,10 @@ public class ListingService {
 
     public List<Listing> getAllListings() {
         return (List<Listing>) listingRepository.findAll();
+    }
+
+    public List<Listing> getAllListingsForUser(){
+        return listingRepository.findAllByUser(userService.getCurrentUser());
     }
 
     public Listing getListingById(Long id) {
