@@ -20,6 +20,9 @@ public class ListingService {
     @Autowired
     private ListingRepository listingRepository;
 
+    @Autowired
+    private UserService userService;
+
     private static final String UPLOAD_DIR = "uploads/";
 
     public Listing saveListing(MultipartFile image, String name, String category, String location, int quantity) {
@@ -32,6 +35,9 @@ public class ListingService {
         listing.setCategory(category);
         listing.setLocation(location);
         listing.setQuantity(quantity);
+
+        listing.setUser(userService.getCurrentUser());
+
         return listingRepository.save(listing);
     }
 
