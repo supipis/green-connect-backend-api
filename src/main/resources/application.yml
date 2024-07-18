@@ -9,4 +9,3 @@ spring:
     init:
       platform: sqlserver
       mode: always
-
