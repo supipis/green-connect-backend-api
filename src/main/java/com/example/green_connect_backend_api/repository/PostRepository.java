@@ -1,6 +1,6 @@
 package com.example.green_connect_backend_api.repository;
 
-import com.example.green_connect_backend_api.entity.Listing;
+import com.example.green_connect_backend_api.entity.MessageThread;
 import com.example.green_connect_backend_api.entity.Post;
 import com.example.green_connect_backend_api.entity.User;
 import org.springframework.data.repository.CrudRepository;
