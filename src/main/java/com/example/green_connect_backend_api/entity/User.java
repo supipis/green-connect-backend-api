@@ -2,6 +2,8 @@ package com.example.green_connect_backend_api.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -10,6 +12,9 @@ public class User {
     private Long id;
     private String username;
     private String password;
+
+    @OneToMany
+    List<MessageThread> messageThreads;
 
     public User() {
     }
